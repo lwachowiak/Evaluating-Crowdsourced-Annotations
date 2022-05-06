@@ -1,24 +1,14 @@
 from visual_genome import api as vg
-from visual_genome import models
-
-class utils:
-    def __init__(self) -> None:
-        pass
-
-    def get_image(self, image_id):
-
-        image = vg.get_image_data(id=image_id)
-
-        descriptions = vg.get_region_descriptions_of_image(id=image_id)
-
-        return image, descriptions
-
-    def add_annotation(self, image_id):
-        pass
-
+from visual_genome.models import Region
+from matplotlib import pyplot as plt
+from PIL import Image as PIL_Image
+import requests
+from io import BytesIO 
 
 
 class dataset:
+
+
     def __init__(self) -> None:
 
         self.image_ids = {
@@ -29,27 +19,49 @@ class dataset:
             "computers": [3, 10, 12, 13, 14, 15, 2417706, 2417296, 2417294, 2416824]
             }
 
-        self.utils = utils()
-    
+
     def get_all_data(self):
 
-        data_dict = {"image":"data"}
+        data_dict = {}
 
         for cat in self.image_ids:
             for el in self.image_ids[cat]:
 
-                image, data = self.utils.get_image(el)
-                data_dict.update({image: data})
+                descriptions = vg.get_region_descriptions_of_image(id=el)
+                descriptions = [descriptions[x].phrase for x in range(len(descriptions))]
+                image = (cat, el)
+                data_dict.update({image: descriptions})
 
         return data_dict
 
 
-if __name__ == "__main__":
-    dset = dataset()
+    def add_annotation(self, image_id, phrase: str, data_dict: dict):
 
-    data = dset.get_data()
+        descriptions = vg.get_region_descriptions_of_image(id=image_id)
+        image = vg.get_image_data(id=image_id)
+        descriptions.append(Region(9999, image, phrase, 0, 0, 0, 0))
+        descriptions = [descriptions[x].phrase for x in range(len(descriptions))]
+        image =(self.get_image_label(image_id), image_id)
+        data_dict.update({image: descriptions})
+        return data_dict
 
-    print(data)
-        
 
-        
+    def get_image_label(self, image_id):
+
+        for cat in self.image_ids:
+            for el in self.image_ids[cat]:
+                if el == image_id:
+                    return cat
+                else:
+                    pass
+
+
+    def visualise(self, image_id):
+
+        image = vg.get_image_data(id=image_id)
+        fig = plt.gcf()
+        fig.set_size_inches(18.5, 10.5)
+        response = requests.get(image.url)
+        img = PIL_Image.open(BytesIO(response.content))
+        plt.imshow(img)
+        plt.show()
