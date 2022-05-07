@@ -1,0 +1,121 @@
+# ('trains', 22)
+annotations1 = ['Cars on a street', 'A train on grass', 'Two palm trees', 'Balconies on a high rise building',
+                'Tall buildings', 'Grassy area next to a road', 'Paved roadway', 'Shadows of palm trees on the road',
+                'Tall pole on a grassy area', 'Window in a building', 'the grass is green on the grass',
+                'the stop sign is red', 'cars are parked on the side of the road', 'the sky is cloudy',
+                'the road has white painted lines', ' there are tree shadows on the road', 'the pole is metallic',
+                'the car is white', 'the train has 5 doors', 'there are no cars on the road', 'the road is tarmaced',
+                'palm trees align the street', 'the picture was taken outdoors', 'it was a sunny day',
+                'buildings are to the right of the picture', 'the grass is green', 'cars move down the street',
+                'a train is on the center', 'the traffic light is red', 'shadows are cast on the road',
+                'The train with red lights', 'The traffic light is red', 'There are two traffic lights.',
+                'There are buildings behind the trees', "There's a yellow building.",
+                "There's a traffic light in the corner", 'The grass is green', 'The other lane is empty.',
+                "There's a silver car in the last line.", 'there is a liner in the picture', 'trees are in the photo',
+                'several cars are present', 'buildings are present', 'this is an outdoor picture',
+                'it is sunny outside',
+                'a pole is present  in the picture', 'the road is grey', 'the trees cast shadows',
+                'the road has white stripes', 'high rise building', 'palm trees on meridian',
+                'painted lane marker on street', 'cover plate for underground utilities',
+                'shadows of palm trees on road', 'monorail vehicle on meridian',
+                'suspended traffic light showing red color', 'group of trees bordering the street',
+                'cars waiting at stoplight', 'balconies on high rise building', 'stoplights all indicating red',
+                'manicured section of green grass', 'a four car tram/trolly', 'a palm tree',
+                'the red headlights of the tram', 'a tall metal pole', 'a stopped silver hatchback car',
+                'a very tall grey building with balconies', 'an overcast but bright sky',
+                'a streetlight with black metal pole and white lamp', 'road has no cars', 'train is next to the road',
+                'cars are moving the same direction', 'grass is green in colour', 'two red lights are on the train',
+                'a shadow is on the road', 'white lamp can be seen', 'traffic lights are were the train is',
+                'electric cables are above the train', 'it is an outdoor scene', 'it is a daytime scene',
+                'the grass is green', 'there is a train in the photo', 'the day seems to be sunny',
+                'there are several cars on the road', 'the trees are green',
+                'there is amultistory building in the photo', 'there are many windows on the building',
+                'there is a white line on the road', 'public transportation bus', 'large palm trees',
+                'traffic stopped for red light', 'balconies for apartment or condo building',
+                'green grass median between roads', 'no traffic on this side of street',
+                'high-rise residential buildings', 'tall metal pole', 'electric cable, powering the bus',
+                'traffic light at intersection']
+
+# ('computers', 15)
+annotations2 = ['monitor is has been turned off', 'mouse is white in colour', 'gazzette paper is on desk',
+                'mouse pad is black', 'papers are on the desk', 'desk is grey in colour',
+                'the keyboard is white with grey', 'monitor is white in colour',
+                'red thing is on the computer', 'some white powder is on the desk',
+                'Computer screen turned off', 'The mouse is white', 'Keyboard is gray and white',
+                'Mouse pad is black and silver', 'Corner of a newspaper', 'Crossword puzzle in the newspaper',
+                'White papers on the desk', 'Ketchup on the desk', 'Computer button is round',
+                'The wall is white', 'a red small box', 'white monitor which is turned off',
+                'bunchof white papers on table', 'white mouse on the mouse pad',
+                'a dell keyboard with grey keys and white keys', 'a brown box ',
+                ' a newspaper with crossword puzzle', 'grey surface table', 'turned off monitor',
+                'a white wall', 'the wall is white', 'the monitor is white', 'papers are on a desk',
+                'the keyboard is white and grey', 'the mouse is cream', 'the desk is grey',
+                'the label says dell', 'a newspaper is on the desk', 'a red and white sticker on the screen',
+                'picture was taken indoors', 'the monitor is off', 'there is a computer in the photo',
+                'it is an indoor scene', 'the room appears to be well lit',
+                'there are several papers on the desk', 'the desk is grey', 'the wall is white',
+                'it appears to be an office', 'there is a newspaper on the desk',
+                'the monitor,keyboard and mouse are white', 'red thing is on the comp', 'mouse is on the desk',
+                'mouse pad is below the mouse', 'white thing is next to the computer',
+                'a brown box is at the edge', 'a gazette is on the desk', 'monitor is turned off',
+                'keyboard is white with some grey', 'white mouse is on the desk',
+                'monitor has been switch off', 'keyboard is white with some grey',
+                'a white thing is on the desk', 'mouse pad is on the desk', 'red thing is on the computer',
+                'a box is on the desk', 'key to previous crossword puzzle', 'box of paper clips',
+                'computer mouse sitting on mousepad', 'loose papers spread on desk', 'black mouse pad',
+                'rumpled up Kleenex tissue', 'grey surface of desk top', 'newspaper section on desk',
+                'something gooey stuck on computer monitor', 'bracket on wall behind desk',
+                'individual serve condiment packet', 'keyboard of a Dell personal computer',
+                'cardboard boxes on top of desk', 'computer mouse with cord leading to computer',
+                'newspaper with key to crossword puzzle', 'slotted bracket attached to wall',
+                'monitor of a Dell desktop computer', 'paper napkin with writing on it',
+                'open box of paper clips', 'Computer monitor screen is blank, turned off',
+                'white computer keyboard', 'computer corded mouse on mousepad',
+                'red and white sticker attached to monitor', 'various papers stacked loosely on tabletop',
+                'ketchup condiment packet', 'newspaper with crossword visible', 'stack of cardboard boxes',
+                'metal brackets for wall shelves', 'grey desktop surface']
+
+# ('trains', 61576)
+annotations3 = ['train station has a window', 'train station has a window', 'train station has a window',
+                'train station has a window', 'train station has a window', 'train has a dark window',
+                'train has a dark window', 'train has a dark window', 'A large blue and white train car.',
+                'East Coast painted in red paint.', 'A long segment of tinted black windows.',
+                'A long barf of black train wheels.', 'A website painted on the side of a train.',
+                'A large white fixture on a building.', 'A connection between two train cars.',
+                'A paved walkway near a train.', 'A large arch in a building.', 'the door is blue',
+                'the handle of a door', 'the door is blue', 'window on side the train', 'the door has a window ',
+                'the number on side the train', 'a window on the wall',
+                'a website on the side of the train in red letters', 'the side of the platform',
+                'window of building behind the train', 'a train on tracks', 'the letter m on the side of the train',
+                'window of an east coast passenger train', 'window of an east coast passenger train',
+                'window of an east coast passenger train', 'window of an east coast passenger train',
+                'window of an east coast passenger train', 'window of an east coast passenger train',
+                'door to east coast passenger train', 'first train of east coast passenger train',
+                '2nd train of east coast train', 'Train in the station ', 'Empty train platform ',
+                'Train in the station ', 'Train on the tracks ', 'Word EAST COAST on the train ',
+                'Letter M on the train ', 'Website address on the train ', 'Platform has solid white line ',
+                'An east-coast train on tracks', 'The long train on tracks', 'A marked passage next to the tracks',
+                "The central train's coach.", 'The train company name', "The train station's building support.",
+                "The train's second coach door.", 'Number 41090 in white letters on grey background',
+                'solid metal door painted midnight blue',
+                'royal purple letters reading www.eastcoast.co.uk printed on side of train',
+                'large stylized letters reading "East Coast" in royal purple',
+                'stylized blue line emphasizing words below it', 'inset shiny metal hand rail',
+                '"C3" painted in white on the black metal front of the train', 'brick arches with window panes between',
+                'clean, modern electrical train', 'white and silver passenger train',
+                'white and silver passenger train', 'red logo on train']
+
+
+# returns 2 arrays of correct and incorrect annotations
+def get_test_annotations():
+    return annotations2, annotations1
+
+
+correct_c_scores = [0.58356276, 0.0, 0.11475325, 0.45345786, 0.11946589, 0.19687159, 0.08835841, 0.3766792,  0.30145914, 0.40165514, 0.1786639,  0.69898485, 0.70765889, 0.293212,   0.56762584, 0.40614119, 0.05913411, 0.48576874, 0.48575003, 0.4940755]
+incorrect_c_scores = [0.83166645, 0.90328066, 0.70342899, 1.0, 0.743797,   0.74476161, 0.75342949, 0.63947492, 0.82349366, 0.79726404, 0.81937924 ,0.91984132, 0.69905389, 0.85165469, 0.50766809, 0.6531065,   0.7298155,   0.74824192, 0.75301666, 0.52320571, 0.61139811]
+
+correct_p_scores = [0.01696702, 0.01678939, 0.03480556, 0.00460669, 0.00178206, 0.03798397, 0.0, 0.01249802, 0.18739935, 0.01155947, 0.0018397,  0.04733607, 0.01545955, 0.05815664, 0.04699258, 0.87965467, 0.01624689, 0.03113024, 0.00528809, 0.13140748]
+incorrect_p_scores = [0.03382556, 0.00667101, 0.2788062,  0.07051648, 0.00573416, 0.00417944, 0.13049353, 0.00312271, 0.0824919,  0.05051849, 0.05656711, 0.37913298, 0.03783326, 0.09470804, 0.06510899, 0.04344974, 0.13858298, 0.08079631, 1.0, 0.03640625, 0.40435259]
+
+def get_scores():
+    return correct_c_scores, incorrect_c_scores, correct_p_scores, incorrect_p_scores
