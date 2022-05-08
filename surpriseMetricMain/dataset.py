@@ -62,10 +62,11 @@ class Dataset:
     def visualise(self, image_id):
 
         image = vg.get_image_data(id=image_id)
+        plt.figure()
         fig = plt.gcf()
         fig.set_size_inches(18.5, 10.5)
         response = requests.get(image.url)
         img = PIL_Image.open(BytesIO(response.content))
         plt.imshow(img)
-        plt.show()
+        plt.savefig('image.png')
 
