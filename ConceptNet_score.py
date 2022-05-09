@@ -25,16 +25,20 @@ def extract_nouns(annotation):
 
 
 
-def get_annotation_score(new_annotation, keyword):
+def get_annotation_score(new_annotation, keyword, verbose=False):
     # extract the concepts from the new annotation
     concepts = extract_nouns(new_annotation)
-    scores=[]
-    for concept in concepts:
-        scores.append(get_concept_relatedness_score(concept, keyword))
-    avg_score=sum(scores)/len(scores)
-    # print concepts and scores side by side
-    for i in range(len(concepts)):  
-        print(concepts[i], scores[i])
-    return avg_score
+    if len(concepts)==0:
+        if verbose: print("No nouns found in the annotation")
+        return 0
+    else:
+        scores=[]
+        for concept in concepts:
+            scores.append(get_concept_relatedness_score(concept, keyword))
+        avg_score=sum(scores)/len(scores)
+        # print concepts and scores side by side
+        for i in range(len(concepts)):  
+            if verbose: print(concepts[i], scores[i])
+        return avg_score
 
-print("Average Score:",get_annotation_score("the picture contains a cute puppy", "dog"))
+print("Average Score:",get_annotation_score("there is a tram at Paddingtion Station", "trains", verbose=True))
