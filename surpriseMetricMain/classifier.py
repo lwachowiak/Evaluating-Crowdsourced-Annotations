@@ -22,12 +22,11 @@ class Classifier:
         for s in incorrect_scores:
             y.append(1)
 
-#        x, x_test, y, y_test = train_test_split(np.array(x), np.array(y))
-        self.classifier = SVC()
-        self.classifier.fit(x.reshape(-1, 1), y)
-#        y_pred = self.classifier.predict(x_test.reshape(-1, 1))
-#        print(y_pred)
-#        print(accuracy_score(y_test, y_pred))
+        x, x_test, y, y_test = train_test_split(np.array(x), np.array(y))
+        self.classifier = Perceptron()
+        self.classifier.fit(np.array(x), np.array(y))
+        y_pred = self.classifier.predict(x_test)
+        print("Accuracy of classifier: ", accuracy_score(y_test, y_pred))
         pickle.dump(self.classifier, open("classifier.pkl", "wb"))
 
 
@@ -36,5 +35,4 @@ class Classifier:
 
 
     def classify(self, annotation_score):
-        s = np.array(annotation_score).reshape(-1, 1)
-        return self.classifier.predict(s)
+        return self.classifier.predict(annotation_score)
