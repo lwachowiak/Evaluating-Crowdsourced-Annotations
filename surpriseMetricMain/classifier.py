@@ -6,6 +6,8 @@ from sklearn.linear_model import Perceptron
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import pickle
+from sklearn.metrics import confusion_matrix
+
 
 
 class Classifier:
@@ -23,10 +25,12 @@ class Classifier:
             y.append(1)
 
         x, x_test, y, y_test = train_test_split(np.array(x), np.array(y))
-        self.classifier = Perceptron()
+        self.classifier = SVC()
         self.classifier.fit(np.array(x), np.array(y))
         y_pred = self.classifier.predict(x_test)
         print("Accuracy of classifier: ", accuracy_score(y_test, y_pred))
+        print("Confusion matrix: ", confusion_matrix(y_test, y_pred))
+
         pickle.dump(self.classifier, open("classifier.pkl", "wb"))
 
 

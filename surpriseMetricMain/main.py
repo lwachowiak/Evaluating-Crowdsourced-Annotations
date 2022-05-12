@@ -27,18 +27,21 @@ def normalise(array1, array2):
 
 
 def graph(correct_scores, incorrect_scores, filename):
-    plt.figure()
-    plt.hlines(1, 1, 20)  # Draw a horizontal line
+    plt.figure(figsize=(8, 3))
     plt.xlim(0, 1)
+    plt.hlines(1, 0, 1, color='black')  # Draw a horizontal line
 
     y1 = np.ones(np.shape(correct_scores))  # Make all y values the same
     y2 = np.ones(np.shape(incorrect_scores))
     normal = normalise(correct_scores, incorrect_scores)
-    plt.plot(normal[0], y1, '|', ms=40, label="Correct annotation")
-    plt.plot(normal[1], y2, '|', ms=40, label="Incorrect annotation")
-    plt.legend(markerscale=0.2)
+    plt.plot(normal[0], y1, '|', ms=40, label="Annotation for image with label 'no-flag'", color="#D79B00")
+    plt.plot(normal[1], y2, '|', ms=40, label="Annotation for image with label 'flag'", color="#6C8EBF")
+    plt.legend(markerscale=0.2, loc ='upper center')
     plt.axis('off')
-    plt.title('Scores plotted in range 0-1')
+ #   if filename == 'closeness.png':
+ #       plt.title('Normalised similarity scores of test annotations')
+ #   if filename == 'kb.png':
+ #       plt.title('Normalised knowledge base score of test annotations')
     plt.savefig(filename)
 
 
@@ -109,11 +112,6 @@ def setUp(image_class1, image_class2):
     c_correct_scores = np.array(c_correct_scores).flatten().tolist()
     c_incorrect_scores = np.array(c_incorrect_scores).flatten().tolist()
 
-#    file = open("scores.txt", "w+")
-#   file.writelines([str(scores[0]), str(scores[1]), str(scores[2]), str(scores[3]), str(scores[4])])
-#    file.close()
-#    print("Correct calculations:", correct_scores)
-#    print("Incorrect calculations:", incorrect_scores)
     graph(c_correct_scores, c_incorrect_scores, "closeness.png")
 
     correct_keyword = image_class1
@@ -126,10 +124,6 @@ def setUp(image_class1, image_class2):
 
     graph(kb_correct_scores, kb_incorrect_scores, "kb.png")
 
-    print("Correct C scores", c_correct_scores)
-    print("Correct KB scores", kb_correct_scores)
-    print("Correct C scores", c_incorrect_scores)
-    print("Correct KB scores", kb_incorrect_scores)
     correct_scores = np.vstack((c_correct_scores, kb_correct_scores)).T
     incorrect_scores = np.vstack((c_incorrect_scores, kb_incorrect_scores)).T
     c1 = classifier.Classifier()
@@ -159,7 +153,7 @@ def demonstration(c, dictionary, annotation, image):
     else:
         print("Different from existing annotations, flagged for review")
 
-    print("Perplexity score: ", calculatePerplexity(previous_annotations, annotation))
+ #   print("Perplexity score: ", calculatePerplexity(previous_annotations, annotation))
     print()
 
 
@@ -227,12 +221,12 @@ def main():
     image1 = ("trains", 22)
     image2 = ("computers", 15)
     setUp(image1[0], image2[0])
-    showImage(107943)
+#    showImage(22)
     c1 = classifier.Classifier()
     c1.loadClassifier()
     giveDemo(c1, image1)
 
-    print(testPerplexity(image1[0]))
+ #   print(testPerplexity(image1[0]))
 
 
 
