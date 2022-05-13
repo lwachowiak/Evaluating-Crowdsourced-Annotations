@@ -1,0 +1,10 @@
+torch
+transformers
+numpy>=1.17.0
+sentence-transformers
+requests>=2.27.1
+stanza>=1.4.0
+visual-genome==1.0.0
+matplotlib>=3.5.2
+Pillow>=9.0
+scikit-learn>=1.1.0
