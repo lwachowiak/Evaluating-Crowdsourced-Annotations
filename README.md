@@ -25,13 +25,13 @@ To run the script, simply run the ```main.py``` within the ```SurpriseMetricMain
 
 The repository contains the following items:
 
-*```classifier.py``` contains the SVM classifier
-*```closeness.py``` contains the closeness metric calculation
-*```dataset.py``` contains the dataset constructors and custom annotations
-*```demo.py``` contains the demo routine
-*```kbscores.py``` contains the ConceptNet closeness score calculation
-*```main.py``` contains the main routine
-*```perplexity.py``` contains the perplexity calculation (not included in the classifier)
+* ```classifier.py``` contains the SVM classifier
+* ```closeness.py``` contains the closeness metric calculation
+* ```dataset.py``` contains the dataset constructors and custom annotations
+* ```demo.py``` contains the demo routine
+* ```kbscores.py``` contains the ConceptNet closeness score calculation
+* ```main.py``` contains the main routine
+* ```perplexity.py``` contains the perplexity calculation (not included in the classifier)
 
 ## Contact
 name.surname@kcl.ac.uk
